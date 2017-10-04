@@ -1,0 +1,19 @@
+{
+  "name": "guarda-nota",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./bin/index.js",
+  "scripts": {
+    "start": "node ./bin/index",
+    "test": "mocha --recursive"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.1"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.0",
+    "supertest": "^3.0.0"
+  }
+}
