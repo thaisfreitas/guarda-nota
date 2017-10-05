@@ -10,3 +10,7 @@ $ npm start   # run locally
 $ npm test    # run the tests
 ```
 
+## TRAVIS CI 
+To know the build status and continuous integrations just take a look at our CI:
+https://travis-ci.org/thaisfreitas/guarda-nota
+
