@@ -2,8 +2,17 @@ const request = require("supertest");
 const express = require("express");
 const app = require("../../src/web");
 
-describe("/invoices", () => {
-  it("returns 200", done => {
-    request(app).get("/invoices").expect(200, done);
+describe('Routes: Invoices', () => {
+  const defaultInvoice = {
+    name : 'Posto de Gasolina',
+    cnpj : '0987654321',
+    price: 'R$ 100,00'
+  };
+  describe('GET /invoices', () => {
+    it('should return a list of invoices', done => {
+      request(app)
+      .get('/invoices')
+      .expect(200, [defaultInvoice], done);
+    });
   });
 });
