@@ -3,4 +3,4 @@ node_js:
      - "8.6.0"
 
 script:
-  - npm run dance
+  - npm run test

@@ -1,2 +1,2 @@
---require test/unit/helpers.js
+--require test/helpers.js
 --reporter spec
