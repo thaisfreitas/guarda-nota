@@ -12,6 +12,7 @@ describe('Routes: Invoices', () => {
     it('should return a list of invoices', done => {
       request(app)
       .get('/invoices')
+      .set('Accept', 'application/json')
       .expect(200, [defaultInvoice], done);
     });
   });

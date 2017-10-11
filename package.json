@@ -5,7 +5,8 @@
   "main": "./bin/index.js",
   "scripts": {
     "start": "node ./bin/index",
-    "test": "mocha --recursive"
+    "test": "mocha --recursive",
+    "test:unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*_spec.js"
   },
   "author": "",
   "license": "ISC",
