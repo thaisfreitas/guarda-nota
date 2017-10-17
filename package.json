@@ -4,7 +4,7 @@
   "description": "",
   "main": "./bin/index.js",
   "scripts": {
-    "start": "node ./bin/index",
+    "start": "node server.js",
     "test": "mocha --recursive",
     "test:unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*_spec.js",
     "dance": "npm test & npm run test:unit"
@@ -12,7 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.1"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.1",
+    "mongoose": "^4.12.1"
   },
   "devDependencies": {
     "chai": "^4.1.2",
