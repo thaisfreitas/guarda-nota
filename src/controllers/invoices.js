@@ -1,13 +1,13 @@
 class InvoicesController {
 
-  get(req, res) {
-    return res.send([{
-      name: 'Default Invoices',
-      description: 'Invoices description',
-      price: 100
-    }])
+  constructor(Invoice) {
+    this.Invoice = Invoice;
   }
 
+  get(req, res) {
+    return this.Invoice.find({})
+      .then(invoices => res.send(invoices));
+  }
 }
 
 export default InvoicesController;

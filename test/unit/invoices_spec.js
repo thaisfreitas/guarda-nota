@@ -1,5 +1,6 @@
-import InvoicesController from '../../src/controllers/invoices';
+import InvoiceController from '../../src/controllers/invoices';
 import sinon from 'sinon';
+import Invoice from '../../src/models/invoice'
 
 describe('Controllers: Invoices', () => {
 
@@ -10,19 +11,21 @@ describe('Controllers: Invoices', () => {
   }];
 
   describe('get() invoices', () => {
-    it('should return a list of Invoices', () => {
+    it('should call send with a list of invoices', () => {
       const request = {};
       const response = {
         send: sinon.spy()
       };
+      
+      Invoice.find = sinon.stub();
+      Invoice.find.withArgs({}).resolves(defaultInvoice);
 
-      const invoicesController = new InvoicesController();
-      invoicesController.get(request, response);
-
-      expect(response.send.called).to.be.true;
-      expect(response.send.calledWith(defaultInvoice)).to.be.true;
-
+      const invoiceController = new InvoiceController(Invoice);
+      return invoiceController.get(request, response)
+        .then(() => {
+          sinon.assert.calledWith(response.send, defaultInvoice);
+        });
     });
-  });
 
+  });
 });
