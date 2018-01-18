@@ -5,4 +5,4 @@ node_js:
 services: mongodb
 
 script:
-  - npm run test
+  - npm run dance
