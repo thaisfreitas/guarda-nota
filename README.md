@@ -8,6 +8,7 @@ The proposal of this project is to use the minimum to build an API with node js 
 ```
 $ npm install # install dependencies
 $ npm start   # run locally
-$ npm test    # run the tests
-$ npm run test:unit # run unit tests
+$ npm test:unit    # run the unit tests
+$ npm run test:integration # run integration tests
+$ npm run dance # run all levels of tests
 ```
