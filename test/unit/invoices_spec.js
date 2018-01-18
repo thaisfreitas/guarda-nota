@@ -1,15 +1,16 @@
-let InvoicesController = require('../../src/controllers/invoices');
-const sinon = require('sinon');
+import InvoicesController from '../../src/controllers/invoices';
+import sinon from 'sinon';
 
-describe('Controllers: Invoces', () => {
+describe('Controllers: Invoices', () => {
+
   const defaultInvoice = [{
-    name : 'Posto de Gasolina',
-    cnpj : '0987654321',
-    price: 'R$ 100,00'
+    name: 'Default Invoices',
+    description: 'Invoices description',
+    price: 100
   }];
 
   describe('get() invoices', () => {
-    it('should return a list of invoices', () => {
+    it('should return a list of Invoices', () => {
       const request = {};
       const response = {
         send: sinon.spy()
@@ -20,6 +21,7 @@ describe('Controllers: Invoces', () => {
 
       expect(response.send.called).to.be.true;
       expect(response.send.calledWith(defaultInvoice)).to.be.true;
+
     });
   });
 

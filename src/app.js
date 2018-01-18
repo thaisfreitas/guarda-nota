@@ -1,16 +1,14 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const web = require('../src/web');
-const database = require('./config/database');
+import express from 'express';
+import bodyParser from 'body-parser';
+import routes from './routes';
+import database from './config/database';
 
 const app = express();
 
 const configureExpress = () => {
-  app.use('/index', web);
   app.use(bodyParser.json());
-
+  app.use('/', routes);
   return app;
-}
+};
 
-
-module.exports = () => database.connect().then(configureExpress);
+export default () => database.connect().then(configureExpress);

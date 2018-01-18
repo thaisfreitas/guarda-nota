@@ -2,12 +2,12 @@ class InvoicesController {
 
   get(req, res) {
     return res.send([{
-      name : 'Posto de Gasolina',
-      cnpj : '0987654321',
-      price: 'R$ 100,00'
+      name: 'Default Invoices',
+      description: 'Invoices description',
+      price: 100
     }])
   }
 
 }
 
-module.exports = InvoicesController;
+export default InvoicesController;

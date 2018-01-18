@@ -1,12 +1,12 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 mongoose.Promise = Promise;
 
-const mongodbUrl = process.env.MONGODB_URL || 'mongodb://localhost/guarda-nota';
+const mongodbUrl = process.env.MONGODB_URL || 'mongodb://localhost/guardaNota';
 
-const connect = () => mongoose.connect(mongodbUrl, { useMongoClient: true });
+//create a connection with the database, return the connection
+const connect = () => mongoose.connect(mongodbUrl);
 
-module.exports =
-  {
-    connect: connect
-  }
+export default {
+  connect
+}
